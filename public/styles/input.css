@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: rgb(88 28 135);
+	font-family: "Quicksand", sans-serif;
+}

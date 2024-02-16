@@ -3,9 +3,9 @@ const router = express.Router();
 const { getUsers, 
         insertUser, 
         updateUser, 
-        deleteUser } = require('../controllers/home');
+        deleteUser } = require('../controllers/apiController');
 
-
+// api routes
 router.get('/getUsers', getUsers);
 router.post('/addUser', insertUser);
 router.put('/updateUser/:id', updateUser);
