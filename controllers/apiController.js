@@ -95,10 +95,37 @@ const deleteUser = (req, res) => {
 		console.log(err);
 	}
 }
+// get single user
+const getSingleUsers = (req, res) => {
+	const { id } = req.params;
+	let sql = 'SELECT * FROM users WHERE id = ?';
+	
+	try{
+		db.all(sql,[id], (err, rows) => {
 
+			let arr = [];
+			if(err){
+				throw err;
+			}
+			rows.map((row) => {
+				let temp = {
+					id: row.id,
+					name: row.username, 
+					password: row.password
+				};
+				arr.push(temp);
+			})
+			res.json({users: arr});
+		});
+	
+	}catch(err){
+		console.log(err);
+	}	
+}
 module.exports = {
 	getUsers,
 	insertUser,
 	updateUser,
-	deleteUser
+	deleteUser,
+	getSingleUsers
 };

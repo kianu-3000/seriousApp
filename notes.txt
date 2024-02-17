@@ -1,0 +1,10 @@
+
+Simple chat app
+ - be able to create, update, delete users
+ - be able to chat other users
+ - be able to have group chats
+
+
+ db tables:
+    - users (id, username, password)
+    - chat (id, user_id, content, date_created) 

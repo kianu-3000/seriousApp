@@ -5,9 +5,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+// The path library links paths and stuff
+app.use(express.static('./node_modules/bootstrap-icons/font'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/styles')));
 app.set('views', path.join(__dirname, 'views'));
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser());

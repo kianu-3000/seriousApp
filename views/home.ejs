@@ -1,12 +1,36 @@
 <%- include('partials/header');  %>
+<div class="bg-white p-4 
+			rounded-xl 
+			shadow-md 
+			w-2/5
+			h-3/4
+			flex
+			flex-col
+			overflow-hidden
+			relative">
 
-<header>Home</header>
-<% for (let x = 0; x < values.length; x ++) {%>
 
-	<span class="text-base"><%= values[x].name %></span>
+	<header class="bg-purple-500 p-2 rounded-lg flex flex-row items-center flex-grow-0">
+		<i class="bi bi-list text-2xl text-white cursor-pointer"></i>
+		<span class="text-white font-bold text-2xl ml-4">Chat App</span>
+	</header>
+	
+	<main class="bg-purple-200 flex-grow my-2 rounded-lg p-2">
+		<% for (let x = 0; x < values.length; x ++) {%>
 
-<% } %>
-<main></main>
+			<span class="text-base"><%= values[x].name %></span>
+	
+		<% } %>
+	</main>
 
-<footer></footer>
+	<footer class="flex-grow-0 bg-purple-500 p-4 rounded-lg flex flex-row items-center">
+		<input type="text" class="outline-none rounded-md border-none p-4 bg-white flex-grow
+							transition duration-300 focus:shadow-lg font-bold" placeholder="Enter Text">
+		<i class="bi bi-send-fill text-2xl text-white cursor-pointer px-4
+				transition duration-200 hover:rotate-45 hover:scale-150 active:scale-100"></i>
+	</footer>
+
+
+</div>
+
 <%- include('partials/footer');  %>
