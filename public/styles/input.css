@@ -9,3 +9,7 @@
 	color: rgb(88 28 135);
 	font-family: "Quicksand", sans-serif;
 }
+
+::-webkit-scrollbar {
+	width: 0 !important;
+  }

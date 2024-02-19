@@ -1,0 +1,62 @@
+<div class="absolute top-0 w-1/2 h-full bg-pink-400
+            flex flex-col p-4 transition-all ease-in-out duration-200 z-10" id="leftSide">
+    <!-- Online Groups -->
+    <section class="mt-2 flex-grow-0 h-1/3 flex flex-col">
+        <div class="flex flex-row">
+            <h1 class="text-white font-black text-2xl mb-2 flex-grow">Groups</h1>
+            <i class="bi bi-caret-left-fill text-white text-2xl cursor-pointer" id="close_hamburger_menu"></i>
+        </div>
+        <div class="flex flex-col overflow-scroll p-2">
+            <% for (let x = 1; x <= 10; x++)  {%>
+                <span class="p-2 bg-purple-50 mb-2 rounded-xl cursor-pointer
+                            shadow-md">Group <%- x %></span>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Online friends -->
+    <section class="flex-grow h-0 flex flex-col p-2">
+        <h1 class="text-white font-black text-2xl mb-2 mt-2">Online</h1>
+        <div class="flex flex-col overflow-scroll">
+            <% for (let x = 1; x <= 10; x++)  {%>
+                <span class="p-2 bg-purple-50 mb-2 rounded-xl cursor-pointer
+                            shadow-md">Person <%- x %></span>
+            <% } %>
+        </div>
+    </section>
+
+<!-- styles and functionality -->
+    <style>
+        #leftSide{
+            left: -60%;
+            box-shadow: 0px 0px 3px 3px rgba(38, 37, 39, 0.247);
+        }
+    </style>
+    <script>
+        const menu = document.getElementById('leftSide');
+        const hamburger_menu = document.getElementById('hamburger_menu');
+        const close_hamburger_menu = document.getElementById('close_hamburger_menu');
+        const main_container = document.getElementById('main_container');
+
+        hamburger_menu.addEventListener('click', () =>{
+            menu.style.left = '0';
+            var bg = document.createElement('div');
+            bg.id = 'bg_close';
+            bg.classList.add('bg-pink-600', 
+                            'absolute', 
+                            'left-0', 
+                            'top-0', 
+                            'w-full', 
+                            'h-full',
+                            'opacity-20');
+            main_container.appendChild(bg);
+        });
+
+        close_hamburger_menu.addEventListener('click', () =>{
+            menu.style.left = '-60%';
+            var child = document.getElementById('bg_close');
+            main_container.removeChild(child);
+        });
+
+    </script>
+</div>
